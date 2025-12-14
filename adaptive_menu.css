@@ -1,0 +1,145 @@
+﻿/* Стилі навігації (Desktop за замовчуванням) */
+.navbar {
+    position: relative;
+    margin-top: 30px;
+}
+
+/* Приховуємо чекбокс і іконку на великих екранах */
+#menu-toggle, .learnbox-menu {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+    .nav-links a {
+        color: white;
+        border-bottom: 2px solid var(--accent-color);
+        padding-bottom: 5px;
+        font-family: var(--font-accent);
+        font-size: 1.1em;
+    }
+
+/* Адаптивність */
+
+/* Для планшетів та мобільних телефонів (менше 768px) */
+@media screen and (max-width: 768px) {
+
+    /* Зменшуємо шрифти заголовка */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Меню*/
+
+    /* Показуємо іконку */
+    .learnbox-menu {
+        display: block;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+        margin: 0 auto 15px auto;
+    }
+
+        /* Малюємо смужки */
+        .learnbox-menu span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            margin-bottom: 5px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+    /* Стилі для меню */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid var(--accent-color);
+        z-index: 9;
+    }
+
+    /* Логіка відкриття: якщо чекбокс натиснутий -> показати меню */
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    /* Анімація перетворення іконки в хрестик */
+    #menu-toggle:checked ~ .learnbox-menu span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    #menu-toggle:checked ~ .learnbox-menu span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .learnbox-menu span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+}
+
+/* Для дуже маленьких екранів */
+@media screen and (max-width: 480px) {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+    /* Зменшуємо текст і відступи */
+    th, td {
+        padding: 8px 5px !important;
+        font-size: 0.8rem !important;
+        white-space: normal !important;
+        word-wrap: break-word;
+    }
+
+    .product-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Фрейм продукту */
+    .frame-product {
+        height: 750px !important; 
+    }
+
+    /* Фрейм Про нас */
+    .frame-about {
+        height: 565px !important;
+    }
+
+    /* Фрейм контактів */
+    .frame-contacts {
+        height: 1850px !important;
+    }
+
+    /* Гарантуємо, що фрейми не ширші за екран */
+    iframe {
+        width: 100%;
+        max-width: 100vw;
+    }
+}

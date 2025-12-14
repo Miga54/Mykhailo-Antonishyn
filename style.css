@@ -1,0 +1,200 @@
+﻿/* Імпорт шрифтів Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@import 'dark_theme.css';
+@import 'hide.css';
+@import 'product.css';
+@import 'adaptive_menu.css';
+@import 'forms.css';
+
+:root {
+    /* Кольорова гама */
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --secondary-color: #808080;
+    --accent-color: #FF6600;
+    /* Шрифти */
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'IBM Plex Mono', monospace;
+    --font-accent: 'Space Mono', monospace;
+}
+
+/* Базові налаштування */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+body.embedded footer {
+    display: none;
+}
+
+    body.embedded .back-link {
+        display: none;
+    }
+
+/* Заголовки */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+/* Посилання */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: var(--secondary-color);
+        text-decoration: underline;
+    }
+
+/* Навігація в хедері */
+nav a {
+    margin: 0 15px;
+    font-family: var(--font-accent);
+    font-size: 1.1em;
+}
+
+/* Головний банер */
+.hero-header {
+    background-image: url('../images/picture2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+    /* Затемнення фону для кращої читабельності тексту */
+    .hero-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-content p {
+        font-family: var(--font-accent);
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+/* Списки */
+ul, ol {
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Таблиці */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+}
+
+th, td {
+    border: 1px solid var(--secondary-color);
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Інші елементи */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+footer {
+    padding: 40px 20px;
+    border-top: 1px solid var(--secondary-color);
+    text-align: center;
+    margin-top: 50px;
+}
+
+    footer ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        footer ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+    footer p {
+        color: var(--secondary-color);
+        font-family: var(--font-accent);
+        font-size: 0.8rem;
+    }
+
+/* Iframes */
+iframe {
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+/* Картинки */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Виділення тексту при наведенні мишею */
+.js-hover-effect {
+    color: var(--accent-color) !important;
+    background-color: #333;
+    padding: 0 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    transform: scale(1.1);
+    display: inline-block;
+}

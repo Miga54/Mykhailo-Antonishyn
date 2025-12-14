@@ -1,0 +1,94 @@
+﻿/* Стилі для layout */
+.product-details {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+    .product-image img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+.product-info {
+    flex: 1;
+}
+
+/* Ціна та кнопка */
+.price {
+    font-size: 2em;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.buy-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+    .buy-btn:hover {
+        background-color: black;
+        color: white;
+        text-decoration: none;
+    }
+
+/* Таблиця технічних характеристик */
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-family: var(--font-heading);
+    font-size: 0.9em;
+}
+
+    .specs-table th, .specs-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .specs-table th {
+        background-color: var(--secondary-color);
+        width: 30%;
+    }
+
+    .specs-table tr:nth-child(even) {
+        color: #FF6600;
+        background-color: #fafafa;
+    }
+
+/* Відгуки */
+.reviews-section {
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+.review-card {
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 1.2em;
+}
